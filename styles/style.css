@@ -3,9 +3,9 @@
 @import url(./a11y.css);
 @import url(./theme.css);
 @import url(./base.css);
+
 /* 모든 디바이스 (All Device) */
 /* 공통 헤더 */
-
 .appHeader {
   position: relative;
   display: flex;
@@ -18,6 +18,13 @@
 .logo {
   width: 12.75rem; /* 204px */
   height: 3.687rem; /* 59px */
+}
+
+.logo__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./../images/webcafe-logo.png) no-repeat 0 0/100% 100%;
 }
 
 /* 공통 멤버서비스 */
@@ -48,14 +55,14 @@ input[type="search"] {
   border: 1px solid var(--silver);
   background: var(--white);
   border-radius: 0.25rem;
-  padding: var(--spacing_sxxs) var(--spacing-sm);
+  padding: var(--spacing-sxxs) var(--spacing-sm);
 }
 
 .button {
   cursor: pointer;
   height: 2rem;
   border-radius: 0.25rem;
-  padding: var(--spacing_sxxs) var(--spacing-sm);
+  padding: var(--spacing-sxxs) var(--spacing-sm);
   flex: 0 0 auto;
   font-size: var(--text-sm);
 }
@@ -91,6 +98,61 @@ input[type="search"] {
     order: -1;
     font-size: var(--text-sm);
   }
+
+  /* 모바일 검색 폼 */
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+
+  /* 모바일 메뉴 제어 버튼 시작 */
+
+  .buttonWrapper {
+    background: gold;
+    overflow: hidden;
+  }
+
+  .button--burger {
+    width: 30px;
+    height: 30px;
+    background: blue;
+    position: relative;
+  }
+
+  [class*="button--burgerBar"] {
+    background: var(--white);
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+  }
+
+  .button--burgerBarTop {
+    top: 0;
+  }
+  .button--burgerBarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .button--burgerBarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  .is--active .button--burgerBarTop {
+    top: 50%;
+    transform: translate(0%, -50%) rotate(-45deg);
+  }
+  .is--active .button--burgerBarMiddle {
+    transform: translate(-100%, -50%);
+  }
+  .is--active .button--burgerBarBottom {
+    top: 50%;
+    transform: translate(0%, -50%) rotate(45deg);
+  }
+
+  /* 모바일 메뉴 제어 버튼 종료 */
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -100,6 +162,7 @@ input[type="search"] {
     max-width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
+    background-color: gold;
   }
 
   /* 데스크탑 로고 */
@@ -107,6 +170,20 @@ input[type="search"] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    justify-content: flex-end;
+  }
+
+  .searchForm__group .formInput {
+    width: 25rem;
+  }
+
+  /* 데스크탑 메인메뉴 제어버튼 */
+  .button--burger {
+    display: none;
   }
 }
 
@@ -120,12 +197,4 @@ input[type="search"] {
   .logo__link {
     background-image: url(./../images/webcafe-logo@2x.png);
   }
-}
-
-.logo__link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(./../images/webcafe-logo@2x.png) no-repeat 0 0;
-  background-size: 100% 100%;
 }
