@@ -16,10 +16,8 @@
 
 /* 공통 로고*/
 .logo {
-  width: 12.75rem;
-  /* 204px */
-  height: 3.687rem;
-  /* 59px */
+  width: 12.75rem; /* 204px */
+  height: 3.687rem; /* 59px */
 }
 
 .logo__link {
@@ -133,7 +131,6 @@ input[type="search"] {
 
 /* 모바일 디바이스 (Mobile Device) */
 @media (min-width: 320px) and (max-width: 768px) {
-
   /* 모바일 헤더 */
   .appHeader {
     background: var(--primary-color);
@@ -243,7 +240,8 @@ input[type="search"] {
   .appMain {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "book"
+    grid-template-areas:
+      "book"
       "news"
       "board"
       "favorite"
@@ -253,7 +251,6 @@ input[type="search"] {
 
 /* 데스크탑 디바이스 (Desktop Device) */
 @media (min-width: 769px) {
-
   /* 데스크탑 헤더 */
   .appHeader {
     max-width: var(--container-width);
@@ -307,21 +304,26 @@ input[type="search"] {
 
   /* 데스크탑 메인 콘텐츠 */
   .appMain {
-    width: var(--container-width);
+    border: 5px solid red;
+    max-width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid red;
-  }
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "news news news news news news news news news news news news"
+                         "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
+                         "book book book book . board board board board board board board";
 }
 
 /* 고해상도 배경이미지 미디어쿼리 */
 @media (-webkit-min-device-pixel-ratio: 2),
-(min--moz-device-pixel-ratio: 2),
-(-o-min-device-pixel-ratio: 2/1),
-(min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
   .logo__link {
     background-image: url(./../images/webcafe-logo@2x.png);
+  }
   }
 }
