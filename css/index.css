@@ -338,9 +338,11 @@ input[type="search"] {
     flex-flow: column nowrap;
     justify-content: space-between;
   }
+
   .button--burger:focus {
     outline-offset: 2px;
   }
+
   .button--burgerBarTop,
   .button--burgerBarMiddle,
   .button--burgerBarBottom {
@@ -350,14 +352,17 @@ input[type="search"] {
     border-radius: 20px;
     transition: all 350ms;
   }
+
   .is--active .button--burgerBarTop {
     position: relative;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
+
   .is--active .button--burgerBarMiddle {
     transform: translateX(-150%);
   }
+
   .is--active .button--burgerBarBottom {
     position: relative;
     top: -50%;
