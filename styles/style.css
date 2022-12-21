@@ -488,6 +488,7 @@ input[type="search"] {
       "book book book book . board board board board board board board";
   }
 }
+
 /* 고해상도 배경이미지 미디어쿼리 */
 @media (-webkit-min-device-pixel-ratio: 2),
   (min--moz-device-pixel-ratio: 2),
