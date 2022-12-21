@@ -422,6 +422,19 @@ input[type="search"] {
   }
 }
 
+/* 태블릿 디바이스 (Tablet Device) */
+@media (min-width: 640px) and (max-width: 768px) {
+  /* 태블릿 메인 콘텐츠 */
+  .appMain {
+    gap: var(--spacing-xl);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "news news"
+      "board favorite"
+      "twitter book";
+  }
+}
+
 /* 데스크탑 디바이스 (Desktop Device) */
 @media (min-width: 769px) {
   /* 데스크탑 헤더 */
